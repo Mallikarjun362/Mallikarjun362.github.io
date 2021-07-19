@@ -5,17 +5,14 @@ const value = document.querySelector("#value");
 const btns = document.querySelectorAll(".btn");
 
 
-
-
 btns.forEach(function(btn){
-
     btn.addEventListener('click',function(e){
-
-        if ("increase" === e.currentTarget.classList[1]){
-            count += 1;
-        }else if ("decrease" === e.currentTarget.classList[1]){
-            count -= 1;
-        }else if ("reset" === e.currentTarget.classList[1]){
+        const styles = e.currentTarget.classList;
+        if (styles.contains('increase')){
+            count++;
+        }else if (styles.contains('decrease')){
+            count-- ;
+        }else if (styles.contains('reset')){
             count = 0;
         }
         value.innerHTML = count;
@@ -27,6 +24,5 @@ btns.forEach(function(btn){
             value.style.color = 'grey';
         }
     });
-
 
 });
