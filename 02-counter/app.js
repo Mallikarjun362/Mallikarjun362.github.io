@@ -17,13 +17,14 @@ btns.forEach(function(btn){
             count -= 1;
         }else if ("reset" === e.currentTarget.classList[1]){
             count = 0;
-            value.style.color = 'grey';
         }
         value.innerHTML = count;
         if(count > 0){
             value.style.color = "green";
         }else if(count <0){
             value.style.color = "red";
+        }else{
+            value.style.color = 'grey';
         }
     });
 
